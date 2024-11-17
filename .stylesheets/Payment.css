@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navigation{
+    color:black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+  }
+  .topnav {
+      overflow: hidden;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+  }
+  .topnav a {
+      
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 14px;
+  }
+  .topnav a:hover {
+      background-color: #056c08;
+      color: rgb(202, 208, 38);
+  }
+.background-container {
+    position: fixed;
+    top: 135px;
+    left: 180px;
+    
+    width: 1200px;
+    height: 650.4px;
+     background-image: url('Img/bg3.png');/*Set background image */
+     /* Make sure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    filter: blur(8px); /* Apply blur effect */
+    z-index: -1; /* Move the background behind other content */
+}
+
+.container {
+    position: relative; /* Ensure content is positioned relative to the body */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1; /* Ensure content is above the background */
+}
+
+.payment-method {
+    background-color: #ffffff;
+    text-align: center;
+    margin: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6); /* Add shadow */
+    border-radius: 10px; /* Add border radius */
+    padding: 20px; /* Add padding */
+    transition: transform 0.3s ease; /* Add transition */
+    width: 500px;
+}
+
+.payment-method:hover {
+    transform: translateY(-5px); /* Add hover effect */
+}
+
+.payment-method h2 {
+    margin-bottom: 10px;
+}
+
+.payment-options {
+    list-style: none;
+    padding: 0;
+}
+
+.payment-option {
+    margin-bottom: 10px;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option label {
+    display: block;
+    border: 2px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #47ad4e; /* Green text color */
+}
+
+.payment-option input[type="radio"]:checked + label {
+    border-color: #47ad4e; /* Green border color */
+}
+
+.confirm-payment {
+    background: #ccc; /* Grey background */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: not-allowed;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+    align-self: flex-end; /* Align to the right */
+    margin-right: 20px; /* Add some margin */
+    text-decoration: none; /* Remove default button underline */
+    display: inline-block; /* Adjust display to inline-block */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); /* Add shadow */
+}
+
+.confirm-payment.active {
+    background: linear-gradient(to right, #138d75, #47ad4e); /* Gradient background */
+    cursor: pointer;
+}
+
+/* Highlight selected payment method */
+.selected-payment-method {
+    border: 2px solid #47ad4e; /* Add border outline */
+}

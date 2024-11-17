@@ -1,0 +1,203 @@
+<!-- Navigation bar -->
+<div class="topnav">
+  <div>
+    <a href="homepage.html"
+      ><img
+        src="/.images/Logo copy.png"
+        alt="BookMyTurf Logo"
+        style="height: 30px"
+    /></a>
+  </div>
+  <div class="Navigation">
+    <a href="login.html">Login / SignUp</a>
+    <a href="bookinghistory.html">List Your Turf</a>
+    <a href="turfs.html">Turfs</a>
+    <a href="slot_booking.html">Slot Avability</a>
+    <a href="About_Us.html">About Us</a>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/.stylesheets/Login.css" />
+<div id="container" class="container">
+  <!-- FORM SECTION -->
+  <div class="row">
+    <!-- SIGN UP -->
+    <div class="col align-items-center flex-col sign-up">
+      <div class="form-wrapper align-items-center">
+        <div class="form sign-up">
+          <div class="input-group">
+            <i class="bx bxs-user"></i>
+            <input id="username" type="text" placeholder="Username" required />
+          </div>
+          <div class="input-group">
+            <i class="bx bx-mail-send"></i>
+            <input id="email" type="email" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <i class="bx bxs-lock-alt"></i>
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="bx bxs-lock-alt"></i>
+            <input
+              id="confirmpassword"
+              type="password"
+              placeholder="Confirm password"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i class="bx bx-mail-send"></i>
+            <input id="address" type="text" placeholder="address" required />
+          </div>
+          <div class="input-group">
+            <i class="bx bx-mail-send"></i>
+            <input id="gender" name="text" placeholder="gender" required />
+          </div>
+          <button onclick="signup()">Sign up</button>
+          <p>
+            <span> Already have an account? </span>
+            <b onclick="toggle()" class="pointer"> Sign in here </b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- END SIGN UP -->
+    <!-- SIGN IN -->
+    <div class="col align-items-center flex-col sign-in">
+      <div class="form-wrapper align-items-center">
+        <div class="form sign-in">
+          <div class="input-group">
+            <i class="bx bxs-user"></i>
+            <input id="signinun" type="text" placeholder="Username" />
+          </div>
+          <div class="input-group">
+            <i class="bx bxs-lock-alt"></i>
+            <input id="signinpw" type="password" placeholder="Password" />
+          </div>
+          <button onclick="signin()">Sign in</button>
+          <p>
+            <b> Forgot password? </b>
+          </p>
+          <p>
+            <span> Don't have an account? </span>
+            <b onclick="toggle()" class="pointer"> Sign up here </b>
+          </p>
+        </div>
+      </div>
+      <div class="form-wrapper"></div>
+    </div>
+    <!-- END SIGN IN -->
+  </div>
+  <!-- END FORM SECTION -->
+  <!-- CONTENT SECTION -->
+  <div class="row content-row">
+    <!-- SIGN IN CONTENT -->
+    <div class="col align-items-center flex-col">
+      <div class="text sign-in">
+        <h2>Welcome</h2>
+      </div>
+      <div class="img sign-in"></div>
+    </div>
+    <!-- END SIGN IN CONTENT -->
+    <!-- SIGN UP CONTENT -->
+    <div class="col align-items-center flex-col">
+      <div class="img sign-up"></div>
+      <div class="text sign-up">
+        <h2>Join with us</h2>
+      </div>
+    </div>
+    <!-- END SIGN UP CONTENT -->
+  </div>
+  <!-- END CONTENT SECTION -->
+</div>
+<script>
+  let container = document.getElementById("container");
+
+  toggle = () => {
+    container.classList.toggle("sign-in");
+    container.classList.toggle("sign-up");
+  };
+
+  setTimeout(() => {
+    container.classList.add("sign-in");
+  }, 200);
+
+  const handleSignUp = () => {
+    // Simulate a successful sign-up process
+    alert("Sign Up Successful!"); // You can replace this with actual signup logic
+    window.location.href = "bookvenue.html"; // Redirect to Book Venue page
+  };
+
+  const handleSignIn = () => {
+    // Simulate a successful sign-in process
+    alert("Sign In Successful!"); // You can replace this with actual sign-in logic
+    window.location.href = "bookvenue.html"; // Redirect to Book Venue page
+  };
+
+  function signup() {
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirmpassword = document.getElementById("confirmpassword").value;
+    let address = document.getElementById("address").value;
+    let gender = document.getElementById("gender").value;
+
+    console.log(username + "\n" + email);
+    const apiUrl = "/backend/signup.php";
+    var formData = new FormData();
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("address", address);
+    formData.append("gender", gender);
+
+    bdPostData(apiUrl, formData).then((response) => {
+      console.log(response);
+      if (response[0] == "T") {
+        alert("Sign up successful");
+      } else {
+        alert("Sign up failed");
+      }
+    });
+  }
+
+  async function bdPostData(url = "", formData = {}) {
+    const response = await fetch(url, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      redirect: "error",
+      referrerPolicy: "no-referrer",
+      body: formData,
+    });
+    return response.json();
+  }
+
+  function signin() {
+    let username = document.getElementById("signinun").value;
+    let password = document.getElementById("signinpw").value;
+
+    console.log(username + "\n" + email);
+    const apiUrl = "backend/signin.php";
+    var formData = new FormData();
+    formData.append("username", username);
+    formData.append("password", password);
+
+    bdPostData(apiUrl, formData).then((response) => {
+      console.log(response);
+      if (response[0] == "T") {
+        // alert("Sign in successful");
+        window.location.assign("turfs.html");
+      } else {
+        alert("Sign in failed");
+      }
+    });
+  }
+</script>

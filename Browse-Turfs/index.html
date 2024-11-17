@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turfplex Booking System</title>
+    <link rel="stylesheet" href="/.stylesheets/Browse-Turfs.css" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div class="topnav">
+      <div>
+        <a href="homepage.html"
+          ><img
+            src="image/Logo copy.png"
+            alt="BookMyTurf Logo"
+            style="height: 30px"
+        /></a>
+      </div>
+      <div class="Navigation">
+        <a href="login.html">Login/SignUp</a>
+        <a href="bookinghistory.html">ListYourTurf</a>
+        <a href="turfs.html">Turfs</a>
+        <a href="slot_booking.html">Slot Avability</a>
+        <a href="About_Us.html">About Us</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Left Side Filters -->
+      <section class="filters">
+        <h2>Find Turf</h2>
+        <form id="turfSearchForm">
+          <label for="area">Area</label>
+          <select id="area" name="area">
+            <option value="channi">Channi</option>
+            <option value="bhaili">Bhaili</option>
+            <option value="manjalpur">Manjalpur</option>
+            <option value="wagodiya">Wagodiya</option>
+            <option value="vasna">Vasna</option>
+          </select>
+
+          <label for="players">Players</label>
+          <input type="number" id="players" name="players" min="1" value="2" />
+
+          <label for="playDate">Date</label>
+          <input type="date" id="playDate" name="playDate" />
+
+          <button type="button" onclick="searchTurfs()">Search</button>
+        </form>
+      </section>
+
+      <!-- Turf Listings -->
+      <section class="turf-listings">
+        <div class="search-bar">
+          <input type="text" placeholder="Search turfs..." id="searchQuery" />
+          <button onclick="searchTurfs()">Search</button>
+        </div>
+        <h1>Nearest turfs</h1>
+        <div class="turfs-grid" id="turfResults">
+          <!-- Turf Blocks Will Appear Here -->
+          <div class="turf-block" onclick="openTurfDetail('Bhaili')">
+            <img src="image/bhaili.png" alt="Turf 1" />
+            <h3>Sporto Turf</h3>
+            <p>Location: Bhaili</p>
+            <p>Price: ₹700/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('Gotri1')">
+            <img src="image/gotri.png" alt="Turf 2" />
+            <h3>Radiant Turf</h3>
+            <p>Location: Gotri</p>
+            <p>Price: ₹900/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('Gotri2')">
+            <img src="image/gotri2.png" alt="Turf 3" />
+            <h3>Tranquil Turf</h3>
+            <p>Location: Gotri</p>
+            <p>Price: ₹800/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('channi2')">
+            <img src="image/channi2.png" alt="Turf 1" />
+            <h3>Twisted Turf</h3>
+            <p>Location: channi</p>
+            <p>Price: ₹1000/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('channi3')">
+            <img src="image/channi3.png" alt="Turf 2" />
+            <h3>Rough N Turf</h3>
+            <p>Location: channi</p>
+            <p>Price: ₹1200/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('channi1')">
+            <img src="image/channi.png" alt="Turf 3" />
+            <h3>Rider Turf</h3>
+            <p>Location: channi</p>
+            <p>Price: ₹1500/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('makarpura')">
+            <img src="image/makarpura.png" alt="Turf 3" />
+            <h3>Big Shot Turf</h3>
+            <p>Location: Makarpura</p>
+            <p>Price: ₹1200/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('makarpura2')">
+            <img src="image/makarpura2.png" alt="Turf 3" />
+            <h3>Flowering Turf</h3>
+            <p>Location: Makarpura</p>
+            <p>Price: ₹1400/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('manjalpur')">
+            <img src="image/manjalpur.png" alt="Turf 3" />
+            <h3>Cheatset Turf</h3>
+            <p>Location: Manjulpur</p>
+            <p>Price: ₹1200/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('manjalpur2')">
+            <img src="image/manjalpur2.png" alt="Turf 3" />
+            <h3>Nerds Turf</h3>
+            <p>Location: Manjulpur</p>
+            <p>Price: ₹1700/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('samiyala')">
+            <img src="image/Samiyala.png" alt="Turf 3" />
+            <h3>Underground Turf</h3>
+            <p>Location: Samiyala</p>
+            <p>Price: ₹900/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('sevasi')">
+            <img src="image/Sevasi.png" alt="Turf 3" />
+            <h3>Wheel O Turf</h3>
+            <p>Location: Sevasi</p>
+            <p>Price: ₹900/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('wagodia1')">
+            <img src="image/wagodia.jpeg" alt="Turf 3" />
+            <h3>Spin It Turf</h3>
+            <p>Location: Wagodia</p>
+            <p>Price: ₹1200/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('wagodia1')">
+            <img src="image/wagodia2.png" alt="Turf 3" />
+            <h3>Kicks Turf</h3>
+            <p>Location: Wagodia</p>
+            <p>Price: ₹1400/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('vasna1')">
+            <img src="image/vasna.png" alt="Turf 3" />
+            <h3>Play It Turf</h3>
+            <p>Location: Vasna</p>
+            <p>Price: ₹950/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('vasna1')">
+            <img src="image/vasna.png" alt="Turf 3" />
+            <h3>Play It Turf</h3>
+            <p>Location: Vasna</p>
+            <p>Price: ₹950/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('vasna.html')">
+            <img src="image/vasna2.png" alt="Turf 3" />
+            <h3>Skycolor Turf</h3>
+            <p>Location: Vasna</p>
+            <p>Price: ₹700/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('vasna3')">
+            <img src="image/vasna3.jpeg" alt="Turf 3" />
+            <h3>Rocking Turf</h3>
+            <p>Location: Vasna</p>
+            <p>Price: ₹1500/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('tarsali')">
+            <img src="image/tarsali.png" alt="Turf 3" />
+            <h3>Salt Base Turf</h3>
+            <p>Location: Tarsali</p>
+            <p>Price: ₹1050/hour</p>
+          </div>
+          <div class="turf-block" onclick="openTurfDetail('ramakaka')">
+            <img src="image/Ram.png" alt="Turf 3" />
+            <h3>Get Ready Turf</h3>
+            <p>Location: Tp13</p>
+            <p>Price: ₹1500/hour</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Turfplex. All rights reserved.</p>
+    </footer>
+
+    <script src="/.scripts/Browse-Turfs.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turf Details - Turfplex</title>
+    <link rel="stylesheet" href="channi2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+
+    <!-- Header
+    <header class="navbar">
+        <div class="logo">Turfplex</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Bookings</a>
+            <a href="#">Contact</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header> -->
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Image Slider -->
+        <div class="image-slider">
+            <h2 class="turf-name">Returf</h2>
+            <div class="slider">
+                <div><img src="image/c24.png" alt="Turf 1"></div>
+                <div><img src="image/c22.png" alt="Turf 2"></div>
+                <div><img src="image/c21.png" alt="Turf 3"></div>
+            </div>
+        </div>
+        
+
+        <!-- Turf Details Section -->
+        <section class="turf-details">
+            <div class="details-left">
+                <h3>Amenities</h3>
+                <ul>
+                    <li>Lighted Field</li>
+                    <li>Water Supply</li>
+                    <li>Seating Area</li>
+                    <li>Parking Space</li>
+                </ul>
+
+                <h3>Capacity</h3>
+                <p>Up to 20 players</p>
+
+                <h3>Turf Owner Contact</h3>
+                <p>Email: owner@example.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+
+            <div class="details-right">
+                <div class="price-box">
+                    <h3>Price: $50/hour</h3>
+                    <p>Opening Time: 8:00 AM</p>
+                    <p>Closing Time: 10:00 PM</p>
+                    <button class="btn"><a class="active" href="slot_booking.html">Book your slot</a></button>
+                </div>
+
+                <div class="rating">
+                    <h3>Rating</h3>
+                    <p>⭐⭐⭐⭐⭐ (4.8/5)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Map -->
+        <div class="map">
+            <h3>Location</h3>
+            <div id="map"></div>
+        </div>
+    </main>
+
+    <!-- Booking Modal -->
+    <!-- <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Select Your Slot</h2>
+            <div class="slots">
+                <label><input type="radio" name="slot" value="8:00 AM - 9:00 AM"> 8:00 AM - 9:00 AM</label><br>
+                <label><input type="radio" name="slot" value="9:00 AM - 10:00 AM"> 9:00 AM - 10:00 AM</label><br>
+                <label><input type="radio" name="slot" value="10:00 AM - 11:00 AM"> 10:00 AM - 11:00 AM</label><br>
+                <label><input type="radio" name="slot" value="11:00 AM - 12:00 PM"> 11:00 AM - 12:00 PM</label><br>
+                <!-- Add more slots as needed -->
+            </div>
+            <button class="btn"><a class="active" href="payment.html">Procide For Payment</a></button>
+        </div>
+    </div> -->
+
+    <script src="channi2.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

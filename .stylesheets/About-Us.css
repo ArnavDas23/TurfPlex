@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.navigation{
+    color:rgb(251, 251, 251);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+    display: flex;
+  }
+  .topnav {
+    position: fixed; /* Fix the navbar at the top */
+    background-color: #ffffff; /* Adjust background color */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    z-index: 10; /* Ensure navbar stays on top */
+    width: 100%; /* Full width for responsive behavior */
+    padding: 10px 20px;
+    border-radius: 0; /* Remove initial border radius */
+        overflow: hidden; /* Prevent content overflow when animating */
+        display: flex;
+        justify-content: space-between;
+  }
+  
+  .topnav.scrolled {
+    background-color: #ffffff;
+    border-radius: 40px / 40px;
+    display: flex;
+    opacity: 70%;
+    animation-play-state: running;
+    pointer-events: visible;
+  
+      
+  }
+  
+  .topnav a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block; /* Allow for hover effects */
+    transition: color 0.3s ease-in-out; /* Smooth text color transition */
+  }
+  
+  .topnav a:hover {
+    color: #095827; /* Adjust hover color */
+  }
+
+  .banner {
+    background-image: url('Img/bg2.png');
+    background-size: cover;
+    padding: 100px;
+    text-align: center;
+    color: rgb(253, 251, 251);
+    font-size: 24px;
+}
+.banner h1 {
+    font-size: 50px;
+    margin: 0;
+    color: black;
+    text-align: left;
+    margin-top: 6%;
+    animation: fadeInUp 1s ease-in-out;
+}
+.banner p{
+    font-size: 23px;
+    color: rgb(42, 37, 37);
+    animation: fadeInUp 1s ease-in-out;
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+.banner h2{
+    text-align: left;
+    font-size: 35px;
+    color: black;
+    animation: bounce 1s infinite;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+.banner .btn {
+    margin-top: 20px;
+    background-color: #026d30;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+/* header {
+    text-align: center;
+    padding: 50px;
+    background-color: #28a745; /* Turf green 
+    color: white;
+} */
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.team-section {
+    display: flex; /* Make team members horizontal */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.team-member {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 0.5s ease-in-out; /* Add fade-in animation */
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+}
+
+.team-member p {
+    font-size: 0.9rem;
+    color: #666;
+}
+.about-container{
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-us {
+    flex: 3; /* Take up more space on the right */
+    padding-left: 20px;
+    animation: slideInUp 0.7s ease-in-out; /* Add slide-in animation */
+}
+
+.about-us h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    animation: slideInUp 0.7s ease-in-out;
+}
+
+.about-us p {
+    margin-bottom: 45px;
+    margin-top: 44px;
+    line-height: 1.6;
+    font-size: 14px;
+    font-family: ui-sans-serif;
+    animation: slideInUp 0.7s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
